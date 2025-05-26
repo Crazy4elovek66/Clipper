@@ -10,6 +10,11 @@ TOKEN_FILE = "token.json"
 CLIENT_SECRET_FILE = "client_secret.json"
 
 
+
+if not os.path.exists("client_secret.json") and os.getenv("GOOGLE_CLIENT_SECRET_JSON"):
+    with open("client_secret.json", "w") as f:
+        f.write(os.getenv("GOOGLE_CLIENT_SECRET_JSON"))
+
 def authenticate_youtube():
     creds = None
     if os.path.exists(TOKEN_FILE):
