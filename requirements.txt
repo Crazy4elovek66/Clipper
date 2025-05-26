@@ -1,6 +1,6 @@
 aiogram
 requests
-moviepy
+moviepy==1.0.3
 opencv-python
 numpy
 yt-dlp
